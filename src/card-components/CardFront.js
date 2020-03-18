@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
 export default class CardFront extends Component {
-
   render() {
+    const {poster} = this.props
+
     return (
-      <div className="card-front" style={{backgroundImage: `url(${this.props.posterSrc})`}}>
+      <div className="card-front" style={{backgroundImage: `url(${poster})`}}>
       </div>
     )
   }
+}
+
+CardFront.defaultProps = {
+  title: "Unknown"
 }

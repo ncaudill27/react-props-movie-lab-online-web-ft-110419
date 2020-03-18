@@ -30,18 +30,23 @@ const posterMap = {
 export default class MovieCard extends Component {
 
   render() {
+    let {title, IMDBRating, genres, poster} = this.props.data
+    
     return (
       <div className="movie-card">
-      {console.log(this.props)}
-        {/* which component should receive which props? */}
         
-        <CardBack />
+        {console.log(this.props.data)}
+        <CardFront  poster={posterMap[poster]} />
+        <CardBack title={title} rating={IMDBRating} genres={genres} />
       </div>
     )
   }
 }
 
 MovieCard.defaultProps = {
-  posterSrc : defaultPoster
+  title: "Unknown",
+  IMDBRating: null,
+  genres: ["No Genre(s) Found"],
+  poster: 'default'
 }
 // Don't forget your default props!
