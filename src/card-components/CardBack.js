@@ -9,15 +9,12 @@ import five from '../assets/stars/5-stars.png'
 const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 
 export default class CardBack extends Component {
-  generateRatingElement = () => {
-    let {rating} = this.props
-    
-    if (Number.isInteger(rating)) {
-      return <img src={imgMapper[this.props.rating]} alt={`${this.props.rating} stars`} />
-    } else {
-      return <h4>No Rating Found</h4>
-    }
-  }
+	generateRatingElement = () => {
+		if (this.props.IMDBRating !== null) {
+			return <img src={imgMapper[this.props.IMDBRating]} alt="" />;
+		}
+		return <h4>No Rating Found</h4>;
+	};
   
   render() {
     let {title,  genres} = this.props
