@@ -10,7 +10,3 @@ export default class CardFront extends Component {
     )
   }
 }
-
-CardFront.defaultProps = {
-  title: "Unknown"
-}
